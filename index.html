@@ -6,6 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Picture This!</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      @media (max-width: 960px) {
+        .square-image {
+          display: none;
+        }
+        .landscape-image {
+          width: 100%;
+        }
+      }
+      @media (min-width: 960px) {
+        .landscape-image {
+          display: none;
+        }
+        .square-image {
+          width: 50vw;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -15,17 +33,46 @@
         <h4>My Really Cool Blog Post</h4>
       </div>
       <img
-        src="images/museum.jpg"
+        src="./images/museum.jpg"
+        class="landscape-image"
         alt="Placeholder"
         sizes="(max-width: 320px) 320px,
              (max-width: 480px) 480px,
              (max-width: 720px) 720px,
              960px"
         srcset="
-          images/museum-320.jpg 320w,
-          images/museum-480.jpg 480w,
-          images/museum-720.jpg 720w,
-          images/museum-960.jpg 960w
+          images/landscape-320/museum-320_x_180.png    320w,
+          images/landscape-320/museum-640_x_360.png    640w,
+          images/landscape-320/museum-960_x_540.png    960w,
+          images/landscape-480/museum-480_x_270.png    480w,
+          images/landscape-480/museum-960_x_540.png    960w,
+          images/landscape-480/museum-1440_x_810.png  1440w,
+          images/landscape-720/museum-720_x_405.png    720w,
+          images/landscape-720/museum-1440_x_810.png  1440w,
+          images/landscape-720/museum-2160_x_1215.png 2160w,
+          images/landscape-960/museum-960_x_540.png    960w,
+          images/landscape-960/museum-1920_x_1080.png 1920w,
+          images/landscape-960/museum-2880_x_1621.png 2880w
+        "
+      />
+
+      <img
+        src="./images/museum.jpg"
+        class="square-image"
+        alt="Placeholder"
+        sizes="(max-width: 960px) 960px,
+             (max-width: 1280px) 1280px,
+             1600px"
+        srcset="
+          images/square-960/museum-480_x_480.jpeg     480w,
+          images/square-960/museum-960_x_960.jpeg     960w,
+          images/square-960/museum-1440_x_1440.jpeg  1440w,
+          images/square-1280/museum-640_x_640.jpeg    640w,
+          images/square-1280/museum-1280_x_1280.jpeg 1280w,
+          images/square-1280/museum-1920_x_1920.jpeg 1920w,
+          images/square-1600/museum-800_x_800.jpeg    800w,
+          images/square-1600/museum-1600_x_1600.jpeg 1600w,
+          images/square-1600/museum-2400_x_2400.jpeg 2400w
         "
       />
     </header>
